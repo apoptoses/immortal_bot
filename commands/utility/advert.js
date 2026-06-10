@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
-const DEFAULT_COOLDOWN = 10800; // Default cooldown in seconds (3 hours)
+const DEFAULT_COOLDOWN = 7200; // Default cooldown in seconds (2 hours)
 
 // Cooldown is in seconds
 const ROLE_COOLDOWNS = {
