@@ -2,6 +2,10 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 const DEFAULT_COOLDOWN = 7200; // Default cooldown in seconds (2 hours)
 
+const whitelistedRoleIds = new Set([ 
+    '1503420214157508678', // QI role        
+]);
+
 // Cooldown is in seconds
 const ROLE_COOLDOWNS = {
     '1503420200471629988': 6570, // 1:49:30 // Insight role
@@ -16,7 +20,7 @@ const ROLE_COOLDOWNS = {
     'ROLE_ID_10': 900, // 0:15:00
 };
 
-const ADVERT_CHANNEL_ID = 'ADVERT_CHANNEL_ID_HERE';
+const ADVERT_CHANNEL_ID = '1513575723128983552';
 
 const cooldowns = new Map();
 
@@ -47,6 +51,14 @@ module.exports = {
     async execute(interaction) {
         const userId = interaction.user.id;
         const member = interaction.member;
+
+        const hasWhitelistedRole = member.roles.cache.some(role => whitelistedRoleIds.has(role.id));
+        if (!hasWhitelistedRole) {
+            return interaction.reply({
+                content: '❌ You do not have permission to use this command.',
+                ephemeral: true,
+            });
+        }
 
         if (interaction.channelId !== ADVERT_CHANNEL_ID) {
             return interaction.reply({
