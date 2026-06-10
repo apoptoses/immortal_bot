@@ -4,11 +4,16 @@ const DEFAULT_COOLDOWN = 7200; // Default cooldown in seconds (2 hours)
 
 // Cooldown is in seconds
 const ROLE_COOLDOWNS = {
-    'ROLE_ID_1': 60,
-    'ROLE_ID_2': 120,
-    'ROLE_ID_3': 180,
-    'ROLE_ID_4': 240,
-    'ROLE_ID_5': 300,
+    '1503420214157508678': 6570, // 1:49:30 // QI role
+    '1503420200471629988': 5940, // 1:39:00 // Insight role
+    '1503420832012042260': 5310, // 1:28:30 // Essence role
+    '1503420561471312022': 4680, // 1:18:00 // Soulfire role
+    '1503420966964039845': 4050, // 1:07:30 // Karma role
+    '1510731847783551227': 3420, // 0:57:00 // Star role
+    '1511275339521855538': 2790, // 0:46:30 // Nebula role
+    '1512792882443059230': 2160, // 0:36:00 // Quasar role
+    'ROLE_ID_9': 1520, // 0:25:30 // Miasmar role
+    'ROLE_ID_10': 900, // 0:15:00
 };
 
 const ADVERT_CHANNEL_ID = 'ADVERT_CHANNEL_ID_HERE';
